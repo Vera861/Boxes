@@ -27,5 +27,4 @@ public class TestType<T> {
         }
         System.out.println(newFormat);
     }
-
 }
