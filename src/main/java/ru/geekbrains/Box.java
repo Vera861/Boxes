@@ -32,12 +32,9 @@ public class Box<T extends Fruit> {
 
     public void moving(Box<T> box2) {
 
-        System.out.println(box);
         box2.put(box);
         box.clear();
-        System.out.println(box);
-        System.out.println(box2);
-    }
+       }
 }
 
 
