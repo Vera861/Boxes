@@ -1,11 +1,14 @@
 package ru.geekbrains;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static com.sun.deploy.net.UpdateTracker.clear;
 
 public class Box<T extends Fruit> {
-    private ArrayList<T> box;
+    private List<T> box;
 
-    public Box(T... fruit) {
+    Box(T... fruit) {
         this.box = new ArrayList<T>();
     }
 
@@ -15,22 +18,22 @@ public class Box<T extends Fruit> {
 
     public float getWeight() {
         if (box.size() != 0) {
-            float value = this.box.get(0).getWeigh();
-            return box.size() * value;
+           return box.size() * this.box.get(0).getWeigh();
         } else return (0);
     }
 
-    public boolean compare(Box box) {
+    public boolean compare(Box<?> box) {
+        return this.getWeight() == box.getWeight();
+    }
 
-        if (this.getWeight() == box.getWeight())
-            return true;
-        else return false;
+    private void put(List<T> fruits) {
+        this.box.addAll(fruits);;
     }
 
     public void moving(Box<T> box2) {
+
         System.out.println(box);
-        for (T fruit:box){
-        box2.box.add(fruit);}
+        box2.put(box);
         box.clear();
         System.out.println(box);
         System.out.println(box2);

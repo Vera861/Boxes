@@ -30,6 +30,7 @@ public class Main {
         System.out.println(boxOrange.getWeight());
         System.out.println(boxApple.compare(boxOrange));
         boxApple.moving(boxApple2);
+        System.out.println(boxApple2.getWeight());
 
 
     }
