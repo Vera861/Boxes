@@ -1,3 +1,5 @@
+package ru.geekbrains;
+
 import java.util.ArrayList;
 
 public class TestType<T> {
@@ -27,5 +29,4 @@ public class TestType<T> {
         }
         System.out.println(newFormat);
     }
-
 }
